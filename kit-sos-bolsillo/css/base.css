@@ -1,0 +1,44 @@
+/* Base: reset, tipografía y estilos globales. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-padding-top: calc(76px + var(--safe-top));
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at 12% 10%, var(--halo-1), transparent 42%), radial-gradient(circle at 88% 18%, var(--halo-2), transparent 40%), radial-gradient(circle at 75% 78%, var(--halo-3), transparent 44%);
+  color: var(--ink);
+  font: 16px/1.52 'DM Sans', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Space Grotesk', 'DM Sans', system-ui, sans-serif;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(1.85rem, 5vw, 2.3rem);
+  line-height: 1.08;
+}
+
+p {
+  margin: 0;
+}
+
+.mut {
+  color: var(--mut);
+}

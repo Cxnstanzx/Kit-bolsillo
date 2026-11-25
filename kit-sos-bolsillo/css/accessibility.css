@@ -1,0 +1,18 @@
+/* Accesibilidad: respeto por "reducir movimiento". */
+
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .orb span,
+  .v.on,
+  .big,
+  .pri,
+  .theme-toggle,
+  .chips button {
+    animation: none!important;
+    transition: none!important;
+  }
+
+  .orb .o2 {
+    display: none;
+  }
+}

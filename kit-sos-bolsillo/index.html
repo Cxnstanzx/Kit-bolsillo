@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Kit SOS de Bolsillo: pausa, decisiones del día a día y apoyos reales.">
+  <meta name="theme-color" content="#288594">
+  <title>Kit SOS de Bolsillo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/accessibility.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-pill"><span class="brand-dot" aria-hidden="true"></span><span>Kit SOS de Bolsillo</span></div>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Cambiar a modo oscuro">
+      <span id="themeIcon" aria-hidden="true">🌙</span><span id="themeLabel">Modo oscuro</span>
+    </button>
+  </div>
+</header>
+<div id="toast" class="status-toast" role="status" aria-live="polite"></div>
+
+<main>
+  <section id="inicio" class="v" aria-label="Inicio">
+    <p class="mut" style="font-weight:600;font-size:.9rem">Pausa, decisiones del día a día y apoyos reales</p>
+    <h1 style="margin-top:6px">Hola 👋<br>¿En qué te ayudo hoy?</h1>
+    <div class="hero">
+      <span class="hero-tag">Idea cotidiana para hoy</span>
+      <p id="tip"></p>
+      <button id="tipb" class="hero-btn" type="button">↻ Otra idea</button>
+    </div>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar situaciones por tema"></div>
+    <div class="grid" id="cards"></div>
+    <div class="note-box"><strong>Privacidad en tu dispositivo:</strong> lo que anotes en <em>Mi plan</em> o <em>Mi red</em> se guarda solo en este dispositivo. Puedes guardar una copia desde <em>Mi plan</em>.</div>
+    <div class="ethical-banner"><strong>Apoyo preventivo cotidiano:</strong> este kit te acompaña en momentos del día a día. Si atraviesas una crisis, un malestar intenso o una situación de riesgo, habla de inmediato con tu ETD o un adulto responsable, o llama al <strong>*4141</strong>.</div>
+    <button class="pri amber sos" type="button" data-go="ayuda">💬 Pausa y apoyo ahora</button>
+  </section>
+
+  <section id="sit" class="v" aria-label="Detalle de situación"></section>
+
+  <section id="ayuda" class="v" aria-label="Pausa y apoyo">
+    <button class="back" type="button" data-go="inicio">← Volver al inicio</button>
+    <h1 style="margin:12px 0 8px">No estás solo/a hoy.</h1>
+    <p class="mut" style="margin-bottom:6px">Tomar una pausa y pedir apoyo a tiempo también es cuidarte. Puedes llamar o copiar el número para marcarlo desde tu teléfono.</p>
+    <button class="pri sec" type="button" data-go="red" style="margin-top:12px">🤝 Hablar con mi ETD o mi red</button>
+    <div id="lines"></div>
+    <button class="pri sec" type="button" data-go="s5" style="margin-top:12px">🧭 Cómo pedir ayuda paso a paso</button>
+    <div class="alert"><strong>Urgencias:</strong> este recurso es preventivo y no reemplaza atención especializada. Ante una emergencia médica o un riesgo grave, avisa de inmediato a tu ETD o a un adulto responsable, o llama:<div id="emerg"></div></div>
+  </section>
+
+  <section id="red" class="v" aria-label="Mi red">
+    <p class="mut" style="font-weight:600;font-size:.9rem">Interdependencia en el presente</p>
+    <h1 style="margin-top:4px">Mi red de hoy</h1>
+    <p class="mut" style="margin-top:8px">Anota a tu ETD, personas de confianza o contactos útiles para tenerlos a mano cuando los necesites.</p>
+    <p class="stat"></p>
+    <div id="slots"></div>
+  </section>
+
+  <section id="plan" class="v" aria-label="Mi plan">
+    <p class="mut" style="font-weight:600;font-size:.9rem">Tu guía personal</p>
+    <h1 style="margin-top:4px">Mi plan</h1>
+    <p class="mut" style="margin:8px 0 10px">Complétalo en un momento tranquilo. Te sirve para recordar cómo bajar un cambio cuando algo se pone cuesta arriba.</p>
+    <p class="stat"></p>
+    <div id="fields"></div>
+  </section>
+</main>
+
+<nav aria-label="Navegación principal">
+  <button type="button" data-go="inicio">Inicio</button>
+  <button type="button" data-go="plan">Mi plan</button>
+  <button type="button" data-go="red">Mi red</button>
+</nav>
+
+  <noscript>Esta app necesita JavaScript para funcionar.</noscript>
+
+  <!-- El orden importa: cada archivo usa lo que define el anterior -->
+  <script src="js/data.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/views.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
